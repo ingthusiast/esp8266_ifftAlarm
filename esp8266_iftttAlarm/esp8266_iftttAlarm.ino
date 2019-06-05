@@ -31,7 +31,6 @@ const String msgExternallyDeactivated = "ExternOff";
 
 const String msgAlarmActivated = "AlarmOn";
 const String msgAlarmDeactivated = "AlarmOff";
-//const String msgAlarmDeactivated = "alarm_intern_an";
 
 const int internalStatePin = 5;   // the number of the State_internal pin
 const int externalStatePin = 4;   // the number of the State_external pin
@@ -257,7 +256,7 @@ void handleForm()
 
 	String secret = server.arg("secret");
 
-	if (pwd == "geheim")
+	if (pwd == "iftttSecret")
 	{
 		iftttSecret = secret;
 		writeString(iftttEEPROMAddress, iftttSecret);
