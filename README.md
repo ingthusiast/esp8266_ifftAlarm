@@ -20,6 +20,7 @@ You can connect from any device to the Soft-Access Point of the ESP. If you are 
 If the ESP is registered in the local WLAN network, the ifttt secret must be entered. For this, the local IP address of the ESP must be entered in the browser (Attention! Probably other IP than described above). Either this IP is taken from the local access point (e.g. FritzBox) or the ESP outputs it to the serial interface at startup. For this, the LoLin NodeMCU must be connected to the computer (baud rate 115200) and a serial terminal (e.g. Tera Term) must be started.
 
 The ifttt secret is entered on the now displayed page. The password is "iftttSecret". After saving, the ESP is ready for operation.
+The ifttt configuration webpage also displays the status of the input pins.
 
 If inputs D1, D2 or D5 are now connected to 3V, a message is sent to ifttt (via https). If the connection is disconnected again, a second message is sent.
 
