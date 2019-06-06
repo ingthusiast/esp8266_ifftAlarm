@@ -58,9 +58,7 @@ const char MAIN_page[] PROGMEM = R"=====(
 <!DOCTYPE html>
 <html>
 <body>
-
-<h2>Ifttt Alarm Connect<h2>
-
+<h2>Ifttt Alarm Connect</h2>
 <form action="/action_page">
 ifttt secret:<br>
 <input type="text" name="secret" style="width: 350px;" value="iftttSecret">
@@ -69,8 +67,12 @@ password:<br>
 <input type="text" name="pwd" style="width: 350px;" value="">
 <br><br>
 <input type="submit" value="Submit">
-</form> 
-
+</form>
+<br><h3>input state</h3>
+<table border="black" cellpadding="5">
+<tr><th>internal</th><th>external</th><th>alarm</th></tr>
+<tr><td>ims</td><td>ems</td><td>ais</td></tr>
+<tr><td colspan="3" align="center"><a href="javascript:history.go(0)">reload input states</a></td></tr></table>
 </body>
 </html>
 )=====";
@@ -242,6 +244,31 @@ void handleRoot()
 {
 	String s = MAIN_page; // Read HTML contents
 	s.replace("iftttSecret", iftttSecret);
+	
+	if (State_alarm == HIGH)
+	{
+		s.replace("ais", "HIGH");
+	} else
+	{
+		s.replace("ais", "LOW");
+	}
+	
+	if (State_internal == HIGH)
+	{
+		s.replace("ims", "HIGH");
+	} else
+	{
+		s.replace("ims", "LOW");
+	}
+	
+	if (State_external == HIGH)
+	{
+		s.replace("ems", "HIGH");
+	} else
+	{
+		s.replace("ems", "LOW");
+	}
+		
 	server.send(200, "text/html", s); // Send web page
 }
 
