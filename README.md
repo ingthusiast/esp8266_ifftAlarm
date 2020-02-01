@@ -8,7 +8,9 @@ The Sketch can be tested with a LoLin NodeMCU V3.
 
 ### Prerequisites
 
-To use this sketch the Arduino IDE (at least Ver. 1.8.9) must be installed. In addition, at least the following libraries must be downloaded and available.
+To use this sketch the Arduino IDE (at least Ver. 1.8.9) must be installed. To use the Arduino IDE with the NodeMCU, you have to install an additional board library. Add the URL http://arduino.esp8266.com/stable/package_esp8266com_index.json to the additional boardmanager-URL in the settings and install the 'esp8266' (by ESP8266 Community) package.
+
+In addition, at least the following libraries must be downloaded and available.
 - WiFi Built-In by Arduino (1.2.7)
 - WiFiManager by tzapu (version 0.14.0)
 
